@@ -22,7 +22,7 @@ import { OrderProductsModule } from './order-products/order-products.module';
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.TYPEORM_HOST,
+      host: encodeURIComponent(process.env.TYPEORM_HOST),
       port: parseInt(process.env.TYPEORM_PORT),
       username: process.env.TYPEORM_USERNAME,
       password: process.env.TYPEORM_PASSWORD,
